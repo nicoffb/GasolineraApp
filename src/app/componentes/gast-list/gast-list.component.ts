@@ -10,6 +10,7 @@ import { GasService } from 'src/app/servicios/gas-list.service';
 export class GastListComponent implements OnInit {
 
   gasList : Gas[] = [];
+  gasListSelected: Gas[] = []
 
   constructor(private gasService : GasService) { }
 
