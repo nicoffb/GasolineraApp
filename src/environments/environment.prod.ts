@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/'
+  apiBaseUrl: 'https://raw.githubusercontent.com/nicoffb/GasolineraApp/main/src/GasResponse.json'
 };

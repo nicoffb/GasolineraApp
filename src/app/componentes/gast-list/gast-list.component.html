@@ -1,11 +1,55 @@
-<p>buenas</p>
-<p>hola</p>
-
-
-
-<div>
-    <div *ngFor="let gas of gasList">
-        <p>{{gas.Provincia}}</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listado Gasolineras</title>
+  </head>
+  <body>
+  
+    
+    <div class="text-center mb-5">
+      <h1>GASOLINE APP</h1>
     </div>
+<!--     
+    <div class="example-label-container">
+        <label id="example-name-label" class="example-name-label">Max Value</label>
+        <label class="example-value-label">{{value}}</label>
+      </div>
+      <mat-slider
+          class="example-margin"
+          [disabled]="disabled"
+          [invert]="invert"
+          [max]="max"
+          [min]="min"
+          [step]="step"
+          [tickInterval]="getSliderTickInterval()"
+          [(ngModel)]="value"
+          aria-labelledby="example-name-label">
+      </mat-slider>r>
+    <div> -->
 
-</div>
+    
+
+
+    <div class="px-5 mx-5">
+        <div class="row mb-5">
+            <p class="col">Nombre de la gasolinera</p>
+            <p class="col">Pronvicia</p>
+            <p class="col">Precio Gasolina</p>
+            <p class="col">Precio Gasolina 95</p>
+            <p class="col">Precio Gasolina 98</p>
+            <p class="col">Precio Gasoleo Premium</p>
+          </div>
+      <div *ngFor="let gas of gasList" class="row" id="datos" >
+        <p class="col rounded ">{{ gas["Rótulo"] }}</p>
+        <p class="col rounded">{{ gas["Provincia"] }}</p>
+        <p class="col rounded">{{ gas["Precio Gasoleo A"] }}</p>
+        <p class="col rounded">{{ gas["Precio Gasolina 95 E5"] }}</p>
+        <p class="col rounded">{{ gas["Precio Gasolina 98 E5"] }}</p>
+        <p class="col rounded">{{ gas["Precio Gasoleo Premium"] }}</p>
+      </div>
+    </div>
+  </body>
+</html>
