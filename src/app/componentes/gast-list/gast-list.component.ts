@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { filter } from 'rxjs';
 import { Gas } from 'src/app/interfaces/gas.interface';
 import { GasService } from 'src/app/servicios/gas-list.service';
 
@@ -11,6 +12,8 @@ export class GastListComponent implements OnInit {
 
   gasList : Gas[] = [];
   gasListSelected: Gas[] = []
+  maxPrice: number = 5;
+  minPrice:number = 0;
 
   constructor(private gasService : GasService) { }
 
@@ -18,8 +21,12 @@ export class GastListComponent implements OnInit {
     this.gasService.getGas().subscribe(respuesta => {
       this.gasList = respuesta.ListaEESSPrecio;
     })
+    
 
-
+   /*  getFiltrados (){
+      filter
+    }
+ */
   }
 
 }

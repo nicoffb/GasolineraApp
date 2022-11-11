@@ -12,34 +12,42 @@
     <div class="text-center mb-5">
       <h1>GASOLINE APP</h1>
     </div>
-<!--     
+   
     <div class="example-label-container">
         <label id="example-name-label" class="example-name-label">Max Value</label>
-        <label class="example-value-label">{{value}}</label>
-      </div>
+        <label class="example-value-label">{{maxPrice}}</label>
+      
       <mat-slider
           class="example-margin"
-          [disabled]="disabled"
-          [invert]="invert"
-          [max]="max"
-          [min]="min"
-          [step]="step"
-          [tickInterval]="getSliderTickInterval()"
-          [(ngModel)]="value"
+          max=4
+          min=0
+          step=0.25
+          [(ngModel)]="maxPrice"
           aria-labelledby="example-name-label">
-      </mat-slider>r>
-    <div> -->
-        <label for="customRange2" class="form-label">Precio Gasolina</label>
-<input type="range" class="form-range" min="0" max="5" step="1" id="customRange2">
+      </mat-slider>
+      <mat-slider
+          class="example-margin"
+          max=4
+          min=0
+          step=0.25
+          [(ngModel)]="minPrice"
+          aria-labelledby="example-name-label">
+      </mat-slider>
+    </div>
 
+
+<!--         <label for="customRange2" class="form-label">Precio Gasolina</label>
+<input type="range" class="form-range" min="0" max="5" step="1" id="customRange2">
+ -->
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown button
+                Tipo de gasolina
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Gasoil</a></li>
+              <li><a class="dropdown-item" href="#">Gasolina 95</a></li>
+              <li><a class="dropdown-item" href="#">Gasolina 98</a></li>
+              <li><a class="dropdown-item" href="#">Gasoleo Premium</a></li>
             </ul>
           </div>
 
@@ -48,7 +56,7 @@
         <div class="row mb-5">
             <p class="col">Nombre de la gasolinera</p>
             <p class="col">Pronvicia</p>
-            <p class="col">Precio Gasolina</p>
+            <p class="col">Precio Gasoleo</p>
             <p class="col">Precio Gasolina 95</p>
             <p class="col">Precio Gasolina 98</p>
             <p class="col">Precio Gasoleo Premium</p>
@@ -62,5 +70,7 @@
         <p class="col rounded">{{ gas["Precio Gasoleo Premium"] }}</p>
       </div>
     </div>
+
+    
   </body>
 </html>
