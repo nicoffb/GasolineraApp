@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GastListComponent } from './componentes/gast-list/gast-list.component';
 import { MaterialImportsModule } from 'src/material-imports/material-imports.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialImportsModule,
-    NgbModule
+    NgbModule,
+    FormsModule
 
   ],
   providers: [],

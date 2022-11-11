@@ -14,22 +14,26 @@
     </div>
    
     <div class="example-label-container">
-        <label id="example-name-label" class="example-name-label">Max Value</label>
-        <label class="example-value-label">{{maxPrice}}</label>
-      
+        <label id="example-name-label" class="example-name-label">Máximo valor &nbsp;</label>
+        <label class="example-value-label"> {{maxPrice}}€</label>
+        
       <mat-slider
           class="example-margin"
-          max=4
-          min=0
+          [max]=4
+          [min]="minPrice"
           step=0.25
+          [thumbLabel]="true"
           [(ngModel)]="maxPrice"
           aria-labelledby="example-name-label">
       </mat-slider>
+      <label id="example-name-label" class="example-name-label">Mínimo valor &nbsp;</label>
+      <label class="example-value-label"> {{minPrice}}€</label>
       <mat-slider
           class="example-margin"
-          max=4
-          min=0
+          [max]="maxPrice"
+          [min]=0
           step=0.25
+          [thumbLabel]="true"
           [(ngModel)]="minPrice"
           aria-labelledby="example-name-label">
       </mat-slider>
