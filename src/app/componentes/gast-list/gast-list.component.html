@@ -18,6 +18,7 @@
         <label class="example-value-label"> {{maxPrice}}€</label>
         
       <mat-slider
+          (valueChange)="filtrarPrecio()"
           class="example-margin"
           [max]=4
           [min]="minPrice"
@@ -29,6 +30,7 @@
       <label id="example-name-label" class="example-name-label">Mínimo valor &nbsp;</label>
       <label class="example-value-label"> {{minPrice}}€</label>
       <mat-slider
+          (valueChange)="filtrarPrecio()"
           class="example-margin"
           [max]="maxPrice"
           [min]=0
@@ -43,29 +45,37 @@
 <!--         <label for="customRange2" class="form-label">Precio Gasolina</label>
 <input type="range" class="form-range" min="0" max="5" step="1" id="customRange2">
  -->
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Tipo de gasolina
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Gasoil</a></li>
-              <li><a class="dropdown-item" href="#">Gasolina 95</a></li>
-              <li><a class="dropdown-item" href="#">Gasolina 98</a></li>
-              <li><a class="dropdown-item" href="#">Gasoleo Premium</a></li>
-            </ul>
-          </div>
 
 
     <div class="px-5 mx-5">
-        <div class="row mb-5">
-            <p class="col">Nombre de la gasolinera</p>
-            <p class="col">Pronvicia</p>
-            <p class="col">Precio Gasoleo</p>
-            <p class="col">Precio Gasolina 95</p>
-            <p class="col">Precio Gasolina 98</p>
-            <p class="col">Precio Gasoleo Premium</p>
-          </div>
-      <div *ngFor="let gas of gasList" class="row" id="datos" >
+        
+      <h4>Tipo de gasolina</h4>
+      <mat-form-field appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <mat-select [(ngModel)]="priceSelected" (selectionChange)="filtrarPrecio()">
+          <mat-option value="Precio Gasoleo A">Gasoil</mat-option>
+          <mat-option value="Precio Gasolina 95 E5">Precio Gasolina 95</mat-option>
+          <mat-option value="Precio Gasolina 98 E5">Precio Gasolina 98</mat-option>
+          <mat-option value="Precio Gasoleo Premium">Gasoleo Premium</mat-option>
+          <mat-option value="Precio Gas Natural Licuado">Gas Natural Liquado</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <h4>Provincia</h4>
+      <mat-form-field appearance="fill">
+        <mat-label>Hola</mat-label>
+        <mat-select multiple [(ngModel)]="listaNombres" (selectionChange)="filtrarPrecio()">
+          <mat-option *ngFor="let provincia of provinciaList" [value]="provincia.IDPovincia">{{provincia.Provincia}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
+         
+
+
+
+      <div *ngFor="let gas of gasListSelected" class="row" id="datos" >
         <p class="col rounded ">{{ gas["Rótulo"] }}</p>
         <p class="col rounded">{{ gas["Provincia"] }}</p>
         <p class="col rounded">{{ gas["Precio Gasoleo A"] }}</p>
